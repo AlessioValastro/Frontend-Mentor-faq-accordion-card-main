@@ -1,0 +1,132 @@
+/* ! Reset */
+body,
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ! background */
+  --clr-bg-violet: hsl(273, 75%, 66%);
+  --clr-bg-blue: hsl(240, 73%, 65%);
+  /* ! text */
+  --clr-very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --clr-dark-grayish-blue: hsl(240, 6%, 50%);
+  /* ! text active */
+  --clr-very-dark-blue: hsl(238, 29%, 16%);
+  --clr-soft-red: hsl(14, 88%, 65%);
+  /* ! dividers */
+  --clr-light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+  background: linear-gradient(
+      0deg,
+      var(--clr-bg-blue) 0%,
+      var(--clr-bg-violet) 100%
+    ),
+    url() no-repeat center center;
+}
+.container {
+  background: #ffffff;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1100px;
+  max-height: 550px;
+  border-radius: 2.5rem;
+
+  position: relative;
+  box-shadow: 10px 10px 10px #0000004b;
+}
+.box {
+  height: 190px;
+  position: absolute;
+  left: -95.5px;
+  z-index: 1;
+  align-self: center;
+}
+.imgs {
+  background: url(images/bg-pattern-desktop.svg) no-repeat -655px -330px;
+ 
+  max-height: 100%;
+  background-size: 1100px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+.imgs img {
+  position: absolute;
+  height: 400px;
+  left: -90px;
+}
+.faqs {
+  padding: 3rem 5rem 10rem 0;
+
+  height: 550px;
+}
+.faqs h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+.faq {
+  border-bottom: 1px solid var(--clr-light-grayish-blue);
+}
+
+.question {
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+.question h3 {
+  margin: 1.4rem 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.question h3:hover{
+  color: var(--clr-soft-red);
+}
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: .5s ease, 0s ease-out;
+}
+.answer p {
+  margin: 0 0 1.4rem 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+  opacity: 0.7;
+}
+
+.faq.active .question h3{
+  font-weight: 700;
+}
+.faq.active .answer{
+  max-height: 300px;
+}
+.faq.active img{
+  transform: rotate(180deg);
+}
+img {
+  transition: transform 0.1s ease-in;
+}
